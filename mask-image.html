@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="mask-image">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>mask image</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <style type="text/css">
+        body {
+            /*background-color: gray;*/
+            background-image: url(background-image.png);
+        }
+        .container {
+            /*width: 1000px;
+            height: 600px;*/
+            border: 1px solid #333;
+        }
+        img {
+            -webkit-mask-image: url(mask-image.png);
+            mask-image: url(mask-image.png);
+
+            -webkit-mask-mode: luminance;
+            mask-mode: luminance;
+
+            -webkit-mask-clip: content;
+            mask-clip: content;
+            
+            -webkit-mask-repeat: repeat-x;
+            mask-repeat: repeat-x;
+
+            display: block;
+            width: 50%;
+ /*           height: 400px;*/
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            mask-image
+            <img src="sample1.jpg" alt="">
+        </div>
+    </body>
+</html>
