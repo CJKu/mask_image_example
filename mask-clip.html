@@ -2,51 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="mask-image">
+        <meta name="description" content="mask-repeat">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mask image</title>
+        <title>mask clip</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="author" href="humans.txt">
         <style type="text/css">
         body {
-            background-color: gray;
-            /*background-image: url(background-image.png);*/
+            margin: 0px;
         }
 
         .container {
-            width: 640px;
-            height: 600px;
-            border: 1px solid #333;
+            width: 1200px;
+            height: 1200px;
+            margin: 0px;
         }
-        img {
-            border:20px solid red;
+        div {
+            padding:300px;
+            border: 10px dotted #000000;
+            background-image: url("sample1.jpg");
+            -webkit-mask-image: url(mask-flower.png);
+            mask-image: url(mask-flower.png);
 
-            -webkit-mask-image: url(mask-image.png);
-            mask-image: url(mask-image.png);
-
-            -webkit-mask-mode: luminance;
-            mask-mode: luminance;
-
-            /* content - red border disappear */
-            /* padding/ border - red border appear */
-            /* values of mask-clip are different in webkit and spec */
-            -webkit-mask-clip: content;
-            mask-clip: content;
-            
-            -webkit-mask-repeat: repeat;
-            mask-repeat: repeat;
-            
-            margin: 20px auto;
-            display: block;
-            width: 100%;
-            height: 400px;
+            -webkit-mask-clip: content-box;
+            mask-clip: content-box;
         }
+
         </style>
     </head>
     <body>
         <div class="container">
             mask-clip
-            <img src="http://tympanus.net/codrops-playground/assets/images/cssref/properties/mask-repeat/field.jpg" alt="">
         </div>
     </body>
 </html>

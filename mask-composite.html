@@ -9,35 +9,29 @@
         <link rel="author" href="humans.txt">
         <style type="text/css">
         body {
-            background-color: gray;
+            /*background-color: gray;*/
             /*background-image: url(background-image.png);*/
+            /* Place div at (0, 0) */
+            margin: 0px;
         }
 
         .container {
-            width: 640px;
-            height: 600px;
-            border: 1px solid #333;
+            width: 1200px;
+            height: 1200px;
+            margin: 0px;
         }
-        img {
-            border:20px solid red;
-
-            -webkit-mask-image: url(mask-image.png), url(mask-image.png);
-            mask-image: url(mask-image.png), url(mask-image.png);
-
+        div {
+            background-image: url("img_tree.gif");
+            -webkit-mask-image: url(mask-flower.png), url(mask-image.png);
+            mask-image: url(mask-flower.png), url(mask-image.png);
             -webkit-mask-composite: exclude;
-            mask-composite: exclude;
-            
-            margin: 20px auto;
-            display: block;
-            width: 100%;
-            height: 400px;
         }
+
         </style>
     </head>
     <body>
         <div class="container">
             mask-composite
-            <img src="http://tympanus.net/codrops-playground/assets/images/cssref/properties/mask-repeat/field.jpg" alt="">
         </div>
     </body>
 </html>

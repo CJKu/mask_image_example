@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="description" content="mask-repeat">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mask position</title>
+        <title>background position</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="author" href="humans.txt">
         <style type="text/css">
@@ -22,56 +22,58 @@
         }
         .outer {
             display: inline-block;
-           border:5px dotted #000000; 
+            border:5px dotted #000000; 
         }
         .masked {
-            background-image: url("sample1.jpg");
+            background-image: url("mask-image.png");
+            background-size: 100px;    
+            background-repeat: no-repeat;
 
-            -webkit-mask-image: url(mask-image.png);
+            /*-webkit-mask-image: url(mask-image.png);
             mask-image: url(mask-image.png);
-    
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-            
             -webkit-mask-size: 100px;
             mask-size: 100px;
-            /*mask-repeat: repeat;*/
-            /*mask-size: 100px 100px;*/
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;*/
         }
 
         #LT {
-            -webkit-mask-position: left top;
-            mask-position: left top;  
+            background-position: left top;  
+            /*-webkit-mask-position: left top;  
+            mask-position: left top;  */
         }
         #LB {
-            -webkit-mask-position: left bottom;
-            mask-position: left bottom; 
+            background-position: left bottom; 
+            /*-webkit-mask-position: left bottom;  
+            mask-position: left bottom;  */
         }
         #RT {
-            -webkit-mask-position: right top;
-            mask-position: right top; 
+            background-position: right top; 
+            /*-webkit-mask-position: right top;  
+            mask-position: right top;  */
         }
         #RB {
-            -webkit-mask-position: right bottom;
-            mask-position: right bottom; 
+            background-position: right bottom; 
+            /*-webkit-mask-position: right bottom;  
+            mask-position: right bottom;  */
         }
         </style>
     </head>
     <body>
         <div class="container outer">
-                mask-position(left-top) 
+                background-position(left-top) 
             <div class="container masked" id="LT"></div>
         </div>
         <div class="container outer">
-                mask-position(left-bottom) 
+                background-position(left-bottom) 
             <div class="container masked" id="LB"></div>
         </div>
         <div class="container outer">
-                mask-position(right-top) 
+                background-position(right-top) 
             <div class="container masked" id="RT"></div>
         </div>
         <div class="container outer">
-                mask-position(right-bottom) 
+                background-position(right-bottom) 
             <div class="container masked" id="RB"></div>
         </div>
     </body>
