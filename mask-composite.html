@@ -21,10 +21,18 @@
             margin: 0px;
         }
         div {
-            background-image: url("img_tree.gif");
-            -webkit-mask-image: url(mask-flower.png), url(mask-image.png);
-            mask-image: url(mask-flower.png), url(mask-image.png);
+            background-image: url("sample1.jpg");
+            background-size: 500px 500px;    
+            background-repeat: no-repeat;
+
+            -webkit-mask-image: url(mask-cross.png), url(mask-image.png);
+            mask-image: url(mask-cross.png), url(mask-image.png);
+    
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+
             -webkit-mask-composite: exclude;
+            mask-composite: exclude;
         }
 
         </style>

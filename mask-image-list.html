@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="description" content="mask-repeat">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mask position</title>
+        <title>mask repeat</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="author" href="humans.txt">
         <style type="text/css">
@@ -22,15 +22,12 @@
         }
         .outer {
             display: inline-block;
-           border:5px dotted #000000; 
+            border:5px dotted #000000; 
         }
         .masked {
             background-image: url("sample1.jpg");
             background-size: 500px 500px;    
             background-repeat: no-repeat;
-
-            -webkit-mask-image: url(mask-cross.png), url(mask-image.png);
-            mask-image: url(mask-cross.png), url(mask-image.png);
     
             -webkit-mask-repeat: no-repeat;
             mask-repeat: no-repeat;
@@ -41,10 +38,13 @@
             /*mask-size: 100px 100px;*/
         }
 
-        #LT {
-            background-position: left top;  
-            -webkit-mask-position: left top;
-            mask-position: left top;  
+        #ONE {
+            -webkit-mask-image: url(mask-cross.png), url(mask-image.png);
+            mask-image: url(mask-cross.png), url(mask-image.png);
+
+            -webkit-mask-size: 100px 100px;
+            -webkit-mask-repeat: repeat-y repeat-x;
+            mask-repeat: no-repeat;
         }
         #LB {
             -webkit-mask-position: left bottom;
@@ -62,8 +62,8 @@
     </head>
     <body>
         <div class="container outer">
-                mask-position(left-top) 
-            <div class="container masked" id="LT"></div>
+                mask-repeat: 1 mask
+            <div class="container masked" id="ONE"></div>
         </div>
         <div class="container outer">
                 mask-position(left-bottom) 
