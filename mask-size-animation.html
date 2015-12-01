@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="description" content="mask-image">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mask size</title>
+        <title>mask size animation</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="author" href="humans.txt">
         <style type="text/css">
@@ -12,17 +12,25 @@
             background-color: gray;
         }
         .container {
+            height: 300px;
+            width: 300px;
             background-image: url(background-image.png);
-            background-repeat: repeat-x;
-            border: 1px solid #333;
-            width: 1000px;
-            height: 1000px;
+            background-size: 100% 100%;
+            -moz-transition: all .5s;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+            background-position: center;
 
-            -webkit-mask-image: url(mask-flower.png), url(mask-cross.png);
-            mask-image: url(mask-flower.png), url(mask-cross.png);
 
+            -webkit-mask-image: url(mask-flower.png);
+            mask-image: url(mask-flower.png);
+            /* CRASH!! */
             -webkit-mask-size: 100px, 50px;
             mask-size: 100px, 50px;
+        }
+        .container:hover{
+            -webkit-mask-size: 200px, 100px;
+            mask-size: 200px, 100px;
         }
         </style>
     </head>

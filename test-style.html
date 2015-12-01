@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css" id="stylesheet"></style>
+<link rel="stylesheet" type="text/css" href="test.css" />
+</head>
+<body>
+
+<p id="display">
+  <span id="base"></span>
+  <span id="test"></span>
+</p>
+<div id="content" style="display: none">
+  
+</div>
+
+</body>
+<script class="testbody" type="text/javascript">
+function xfail_computecheck(prop, roundnum) {
+    return false;
+}
+
+function xfail_test(prop, roundnum) {
+    return false;
+}
+
+var gStyleSheet = document.getElementById("stylesheet").sheet;
+var gRule1 = gStyleSheet.cssRules[gStyleSheet.insertRule("#base, #test {}", gStyleSheet.cssRules.length)];
+var gRule2 = gStyleSheet.cssRules[gStyleSheet.insertRule("#test {}", gStyleSheet.cssRules.length)];
+
+var gBase = getComputedStyle(document.getElementById("base"), "");
+var gTest = getComputedStyle(document.getElementById("test"), "");
+
+//gTest.getPropertyValue("mask");
+//gRule2.style.setProperty("mask", "auto", "");
+</script>
+</html>

@@ -1,0 +1,16 @@
+<svg width="140" height="170"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>SVG Circle Mask</title>
+  <desc>Provide a circle SVG mask</desc>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="00%" x2 ="0" y2="100%">
+      <stop stop-color="black" offset="0"/>
+      <stop stop-color="white" offset="1"/>
+    </linearGradient>
+
+    <mask id="masking" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+      <circle cx=".5" cy=".5" r=".35" fill="white" />
+    </mask>
+  </defs>
+</svg>

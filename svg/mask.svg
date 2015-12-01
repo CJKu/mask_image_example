@@ -1,0 +1,16 @@
+<svg width="140" height="170"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Cat</title>
+  <desc>Stick Figure of a Cat</desc>
+  <defs>
+    <mask id="mask1" x="0" y="0" width="100" height="100" >
+      <rect x="0" y="0" width="100" height="50"
+          style="stroke:none; fill: #ffffff"/>
+    </mask>
+  </defs>
+
+  <rect x="1" y="1" width="100" height="100"
+      style="stroke: none; fill: #0000ff; mask: url(#mask1)"/>
+
+</svg>

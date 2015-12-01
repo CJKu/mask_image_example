@@ -1,45 +1,85 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="mask-repeat">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mask composite</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="author" href="humans.txt">
-        <style type="text/css">
-        body {
-            /*background-color: gray;*/
-            /*background-image: url(background-image.png);*/
-            /* Place div at (0, 0) */
-            margin: 0px;
-        }
+<!DOCTYPE HTML>
+<title>mask-composite</title>
+<style type="text/css">
 
-        .container {
-            width: 1200px;
-            height: 1200px;
-            margin: 0px;
-        }
-        div {
-            background-image: url("sample1.jpg");
-            background-size: 500px 500px;    
-            background-repeat: no-repeat;
+div {
+  background-color: blue;
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  width: 100px;
+  height: 100px;
+}
 
-            -webkit-mask-image: url(mask-cross.png), url(mask-image.png);
-            mask-image: url(mask-cross.png), url(mask-image.png);
-    
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
+div.add {
+  top:10px;
+  left: 10px;
+  -webkit-mask-composite: source-over;
+  mask-composite: add, add;
+  -webkit-mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
+  mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
+}
 
-            -webkit-mask-composite: exclude;
-            mask-composite: exclude;
-        }
+div.substract {
+  top:10px;
+  left: 120px;
+  -webkit-mask-composite: source-out;
+  mask-composite: substract;
+  -webkit-mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
+  mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
+}
 
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            mask-composite
-        </div>
-    </body>
-</html>
+div.substract2 {
+  top:10px;
+  left: 230px;
+  -webkit-mask-composite: source-out;
+  mask-composite: substract;
+  -webkit-mask-image: url(mask-composite-2.svg), url(mask-composite.svg);
+  mask-image: url(mask-composite-2.svg), url(mask-composite.svg);
+}
+
+div.intersect {
+  top:10px;
+  left: 340px;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
+  mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
+}
+
+div.intersect2 {
+  top: 120px;
+  left: 10px;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-image: url(mask-composite.svg), url(mask-composite.svg);
+  mask-image: url(mask-composite.svg), url(mask-composite.svg);
+}
+
+div.exclude {
+  top: 120px;
+  left: 120px;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
+  mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
+}
+
+div.exclude2 {
+  top:120px;
+  left: 230px;
+  -webkit-mask-image: url(mask-composite.svg), url(mask-composite.svg);
+  mask-image: url(mask-composite.svg), url(mask-composite.svg);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+</style>
+
+<div class="add"></div>
+<div class="substract"></div>
+<div class="substract2"></div>
+<div class="intersect"></div>
+<div class="intersect2"></div>
+<div class="exclude"></div>
+<div class="exclude2"></div>

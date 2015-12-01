@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="mask-image">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SVG mask</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <style type="text/css">
+        body {
+            background-color: gray;
+        }
+        .container {
+            background-image: url(sample1.jpg);
+            background-repeat: repeat;
+            border: 1px solid #333;
+            width: 500px;
+            height: 500px;
+            /*-webkit-mask: url(circleMask.svg#masking), url(rectMask.svg#masking);*/
+            /*mask: url(cat.svg);*/
+            mask: url(rectMask.svg#masking), url(circleMask.svg#masking);
+            /*mask-image: url(#masking);*/
+            /*mask: -moz-lement(#masking);*/
+            /*mask-size: 100px 400px;
+            mask-repeat: repeat;*/
+        }
+        </style>
+
+    </head>
+    <body>
+        <div class="container" id="mydiv">
+            SVG mask
+            <!--<img src="sample1.jpg" alt="">-->
+        </div>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+<svg width="100" height="100"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>mask-composite</title>
+  <desc>Test mask composite</desc>
+  <rect x="0" y="0" width="100" height="50" fill="black" fill-opacity="1"/>
+  <rect x="0" y="50" width="100" height="50" fill="red" fill-opacity="0"/>
+</svg>
