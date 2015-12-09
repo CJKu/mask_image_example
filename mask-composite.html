@@ -1,88 +1,76 @@
-<!DOCTYPE HTML>
-<title>mask-composite</title>
-<style type="text/css">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="mask-repeat">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mask composition test</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="author" href="humans.txt">
+    <style type="text/css">
+    body {
+        /*background-image: url(background-image.png);*/
+        /* Place div at (0, 0) */
+        margin: 0px;
+    }
 
-div {
-  background-color: blue;
-  position: absolute;
-  margin: 0px;
-  padding: 0px;
-  width: 100px;
-  height: 100px;
-}
+    .container {
+        background-color: gray;
+        width: 500px;
+        height: 500px;
+        margin: 0px;
+    }
+    .outer {
+        display: inline-block;
+        border: 1px solid blue;
+    }
+    .masked {
+        background-image: url("sample1.jpg");
+        background-size: 500px 500px;
+        background-repeat: no-repeat;
 
-div.add {
-  top:10px;
-  left: 10px;
-  -webkit-mask-composite: source-over;
-  mask-composite: add, add;
-  -webkit-mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
-  mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
-}
+        -webkit-mask-size: 500px 500px;
+        mask-size: 500px 500px;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-image: url(mask-cross.png), url(mask-image.png);
+        mask-image: url(mask-cross.png), url(mask-image.png);
+        /*-webkit-mask-image: url(mask-cross.png), url(mask-cross.png);
+        mask-image: url(mask-cross.png), url(mask-cross.png);*/
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+    }
 
-div.substract {
-  top:10px;
-  left: 120px;
-  -webkit-mask-composite: source-out;
-  mask-composite: substract;
-  -webkit-mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
-  mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
-}
-
-div.substract2 {
-  top:10px;
-  left: 230px;
-  -webkit-mask-composite: source-out;
-  mask-composite: substract;
-  -webkit-mask-image: url(mask-composite-2.svg), url(mask-composite.svg);
-  mask-image: url(mask-composite-2.svg), url(mask-composite.svg);
-}
-
-div.intersect {
-  top:10px;
-  left: 340px;
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-  -webkit-mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
-  mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
-}
-
-div.intersect2 {
-  top: 120px;
-  left: 10px;
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-  -webkit-mask-image: url(mask-composite.svg), url(mask-composite.svg);
-  mask-image: url(mask-composite.svg), url(mask-composite.svg);
-}
-
-div.exclude {
-  top: 120px;
-  left: 120px;
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  -webkit-mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
-  mask-image: url(mask-composite.svg), url(mask-composite-2.svg);
-}
-
-div.exclude2 {
-  top:120px;
-  left: 230px;
-  -webkit-mask-image: url(mask-composite.svg), url(mask-composite.svg);
-  mask-image: url(mask-composite.svg), url(mask-composite.svg);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-</style>
-
-<!-- The 1st row -->
-<div class="add"></div>
-<div class="substract"></div>
-<div class="substract2"></div>
-<div class="intersect"></div>
-
-<!-- The 2nd row -->
-<div class="intersect2"></div>
-<div class="exclude"></div>
-<div class="exclude2"></div>
+    .intersect {
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+    }
+    .substract {
+        -webkit-mask-composite: source-out;
+        mask-composite: substract;
+    }
+    .exclude {
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+    </style>
+</head>
+<body>
+    <div class="container outer">
+        add/over
+        <div class="container masked"></div>
+    </div>
+    <div class="container outer">
+        intersect/ source-in
+        <div class="container masked intersect"></div>
+    </div>
+    <div class="container outer">
+        substract/ source-out
+        <div class="container masked substract"></div>
+    </div>
+    <div class="container outer">
+        exclude/ xor
+        <div class="container masked exclude"></div>
+    </div>
+</body>
+</html>

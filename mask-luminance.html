@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="mask-repeat">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>mask position</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <style type="text/css">
+
+        .container {
+            background-color: gray;
+            width: 500px;
+            height: 500px;
+            margin: 0px;
+        }
+
+        .masked {
+            background-image: url("sample1.jpg");
+            background-size: 500px 500px;
+            background-repeat: no-repeat;
+
+            -webkit-mask-image: url(luminance-mask-1.png);
+            mask-image: url(luminance-mask-1.png);
+
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+        }
+        </style>
+    </head>
+    <body>
+    <!-- Here is the current result http://blogs.adobe.com/webplatform/2013/10/08/css-luminance-masking-now-available-in-chrome-canary-and-webkit-nightly/ -->
+        <div class="container outer">
+            <div class="container masked" id="LT"></div>
+        </div>
+    </body>
+</html>
