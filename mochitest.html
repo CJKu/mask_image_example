@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<p id="display"></p>
+<div id="content"></div>
+<script type="text/javascript">
+var div = document.getElementById("content");
+var content = document.getElementById("content");
+var cs = getComputedStyle(content, "");
+
+// Simulate test_value_storage.html
+var gElement = document.getElementById("content");
+var gDeclaration = gElement.style;
+var gComputedStyle = window.getComputedStyle(gElement, "");
+
+function check_shorthand(prop, value) {
+  console.log("Set '" + prop + " : " + value + "'");
+
+  gDeclaration.removeProperty(prop);
+  var origin = gComputedStyle.getPropertyValue(prop);
+  gDeclaration.setProperty(prop, value, "")
+  var before = gComputedStyle.getPropertyValue(prop);
+  gDeclaration.setProperty(prop, before, "")
+  var after = gComputedStyle.getPropertyValue(prop);
+
+  console.log("origin = '" + origin + "'");
+  console.log("before setProperty = '" + before + "'");
+  console.log("after setProperty = '" + after + "'");
+}
+
+check_shorthand("background", "0% 0%");
+check_shorthand("text-decoration", "underline #ff0000");
+check_shorthand("mask", "none alpha repeat add left top");
+
+</script>
+</body>
+</html>
